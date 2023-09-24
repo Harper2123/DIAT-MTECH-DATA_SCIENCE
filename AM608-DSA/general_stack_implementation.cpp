@@ -5,7 +5,7 @@
 int arr[SIZE];
 int top = -1;
 
-void push(char value) {
+void push(int value) {
     if (top < SIZE - 1) {
         arr[top + 1] = value;
         top = top + 1;
