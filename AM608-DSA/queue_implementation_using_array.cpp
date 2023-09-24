@@ -66,28 +66,42 @@ void display(){
   }
 }
 
-int main(){
-  int y;
-  int sw = 0;
-  while(sw!=4){
-    printf("Menu:\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\nEnter your choice: ");
-    scanf("%d",&sw );
-    printf("-------------------------\n");
-    switch(sw){
-      case 1:
-        printf("Enter value: ");
-        scanf("%d",&y);
-        enqueue(y);
-      break;
-      case 2:
-        dequeue();
-      break;
-      case 3:
-        display();
-      break;
-      default:
-      break;
-    }
+void peek(){
+  if(isEmpty()){
+    printf("\nNo elements in Queue!!\n");
   }
-  return 0;
+  else{
+    printf("\nThe element at the front of queue is %d\n",arr[front]);
+    printf("The element at the back of queue is %d\n",arr[rear]);
+  }
+}
+
+int main() {
+    int y;
+    int sw = 0;
+
+    while (sw != 5) {
+        printf("Menu:\n1. Enqueue\n2. Dequeue\n3. Display\n4. Peek\n5. Exit\nEnter your choice: ");
+        scanf("%d", &sw);
+        printf("-------------------------\n");
+        switch (sw) {
+        case 1:
+            printf("Enter value: ");
+            scanf("%d", &y);
+            enqueue(y);
+            break;
+        case 2:
+            dequeue();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            peek();
+            break;
+        default:
+            break;
+        }
+    }
+    return 0;
 }
